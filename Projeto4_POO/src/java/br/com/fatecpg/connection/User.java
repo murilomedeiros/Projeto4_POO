@@ -11,8 +11,12 @@ package br.com.fatecpg.connection;
  */
 public class User {
     private String nome;
-    private String mediaNota;
-
+    private double mediaNota;
+    
+    public User(String nome, double mediaNota){
+        this.nome = nome;
+        this.mediaNota = mediaNota;
+    }
     public String getNome() {
         return nome;
     }
@@ -21,11 +25,11 @@ public class User {
         this.nome = nome;
     }
 
-    public String getMediaNota() {
+    public double getMediaNota() {
         return mediaNota;
     }
 
-    public void setMediaNota(String mediaNota) {
+    public void setMediaNota(double mediaNota) {
         this.mediaNota = mediaNota;
     }
 

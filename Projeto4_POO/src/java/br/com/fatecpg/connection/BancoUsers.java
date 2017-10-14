@@ -14,12 +14,18 @@ import java.util.ArrayList;
 public class BancoUsers {
 
     private static ArrayList<User> Users;
-
     public static ArrayList<User> getClientes() {
         if (Users == null) {
             Users = new ArrayList<>();
         }
         return Users;
     }
-
+    public static boolean addUser(User user){
+        for(User u: getClientes()){
+            if(u.getNome().equals(user.getNome()))
+                return false;
+        }
+        BancoUsers.getClientes().add(user);
+        return true;
+    }
 }
