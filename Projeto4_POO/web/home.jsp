@@ -39,7 +39,7 @@
         </form>
         <table border="1">
             <tr><th colspan="2">Ranking</th></tr>
-            <tr><th>Nome</th><th>Nota</th></tr>
+            <tr><th>Nome</th><th>Média</th></tr>
         <%  double[] notas = new double[BancoUsers.totalUsers()];
             String[] nomes = new String[BancoUsers.totalUsers()];
             for(int i = 0; i < BancoUsers.totalUsers(); i++){
@@ -68,11 +68,15 @@
         </table><br/><br/><br/>
         <table border="1">
             <tr><th colspan="2">Quizzes Efetuados</th></tr>
-            <tr><th>Quiz - Nome</th><th>Media de acertos</th></tr>
-            <%for(int i = 0; i < BancoUsers.totalQuizzesEfetuados(); i++){
-                Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
-                <tr><td>Quiz efetuado por: <%=quiz.getUsuarioTestado()%></td><td>Media: <%=quiz.getMedia()%></td></tr>
-            <%}%>
+            <tr><th>Quiz - Nome</th><th>Media</th></tr>
+            <%int c = 1;
+            for(int i = BancoUsers.totalQuizzesEfetuados() - 1; i >= 0; i--){
+                if(c <= 10){
+                    Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
+                    <tr><td>Quiz de: <%=quiz.getUsuarioTestado()%></td><td><%=quiz.getMedia()%></td></tr>
+                    <%c++;
+                }
+            }%>
         </table>
         <!-- Include Scripts Js -->
         <%@include file="META-INF/jspf/scripts.jspf" %>
