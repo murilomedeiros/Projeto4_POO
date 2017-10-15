@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @author Muca
  */
 public class Quiz {
-    public static int quantidade;
-    public static double soma;
-    public static String usuarioTestado;
-    public static double getMedia(){
-        return soma / (double) quantidade;
+    private int quantidade;
+    private double soma;
+    private String usuarioTestado;
+    public double getMedia(){
+        return (soma / (double) quantidade)*10;
     }
     private static ArrayList <Questao> questoes;
     public static ArrayList <Questao> getQuestoes(){
@@ -29,7 +29,13 @@ public class Quiz {
         }
         return questoes;
     }
-    public static String getUsuarioTestado(){
+    public Quiz(int quantidade, double soma, String usuarioTestado) {
+        this.quantidade = quantidade;
+        this.soma = soma;
+        this.usuarioTestado = usuarioTestado;
+    }
+    
+    public String getUsuarioTestado(){
         return usuarioTestado;
     }
 }

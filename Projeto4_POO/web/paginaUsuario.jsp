@@ -38,20 +38,14 @@
             <input type="submit" name="realizarQuiz" value="Realizar"/>
         </form>
         <table border="1">
-            <tr><th colspan="2">Ranking</th></tr>
+            <tr><th colspan="2">Ranking pessoal</th></tr>
             <tr><th>Nome</th><th>Nota</th></tr>
-            <%for(int i = 0; i < BancoUsers.totalUsers(); i++){
-            User user = BancoUsers.getUser(i);%>
-            <tr><td><%=user.getNome()%></td><td><%=user.getMediaNota()%></td></tr>
-        <%}%>
+            
         </table><br/><br/><br/>
         <table border="1">
-            <tr><th colspan="2">Quizzes Efetuados</th></tr>
-            <tr><th>Quiz - Nome</th><th>Media de acertos</th></tr>
-            <%for(int i = 0; i < BancoUsers.totalQuizzesEfetuados(); i++){
-                Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
-                <tr><td>Quiz efetuado por: <%=quiz.getUsuarioTestado()%></td><td>Media: <%=quiz.getMedia()%></td></tr>
-            <%}%>
+            <tr><th colspan="2">Meus ultimos quizzes Efetuados</th></tr>
+            <tr><th> - </th><th>Media de acertos</th></tr>
+            
         </table>
         <!-- Include Scripts Js -->
         <%@include file="META-INF/jspf/scripts.jspf" %>

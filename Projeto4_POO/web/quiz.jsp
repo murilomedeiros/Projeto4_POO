@@ -3,7 +3,8 @@
     Created on : 13/10/2017, 23:41:01
     Author     : murilo
 --%>
-
+<%@page import="br.com.fatecpg.connection.BancoUsers"%>
+<%@page import="br.com.fatecpg.connection.User"%>
 <%@page import="br.com.fatecpg.connection.Quiz"%>
 <%@page import="br.com.fatecpg.connection.Questao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,6 +17,9 @@
     <body>
         <h1>Quiz</h1>
         <%
+            if(session.getValue("sessionName") == null){
+                response.sendRedirect("home.jsp");
+            }
             if(request.getParameter("finalizar") != null){
                 int acertos = 0;
                 for(Questao q: Quiz.getQuestoes()){
@@ -26,8 +30,8 @@
                         }
                     }
                 }
-                Quiz.quantidade++;
-                Quiz.soma+=(100.0*((double)acertos/10.0));
+                Quiz quiz = new Quiz(10, acertos, String.valueOf(session.getValue("sessionName")));
+                BancoUsers.addQuizEfetuado(quiz);
                 response.sendRedirect(request.getContextPath() + "/paginaUsuario.jsp");
             }
         %>
@@ -46,6 +50,7 @@
             <%=q.getAlternativas()[2]%>
             <%}%>
              <br/><br/>
+            <input type="hidden" name="usuarioTestado" value="<%=session.getValue("sessionName")%>"/>
             <input type="submit" name="finalizar" value="finalizar"/>
         </form>
     </body>
