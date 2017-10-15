@@ -32,7 +32,7 @@
     <body>
         <h1>Pagina do Usuario</h1>
         <h2>Bem vindo <%=session.getValue("sessionName")%></h2>
-        <h3>Sua média: </h3>
+        <h3>Sua média de todos os quizzes: <%=BancoUsers.obterMediaUser(String.valueOf(session.getValue("sessionName")))%></h3>
         <form>
             <input type="submit" name="logoutUsuario" value="Sair"/>
             <input type="submit" name="realizarQuiz" value="Realizar"/>

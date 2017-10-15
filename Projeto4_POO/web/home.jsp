@@ -40,10 +40,31 @@
         <table border="1">
             <tr><th colspan="2">Ranking</th></tr>
             <tr><th>Nome</th><th>Nota</th></tr>
-        <%for(int i = 0; i < BancoUsers.totalUsers(); i++){
-            User user = BancoUsers.getUser(i);%>
-            <tr><td><%=user.getNome()%></td><td><%=user.getMediaNota()%></td></tr>
-        <%}%>
+        <%  double[] notas = new double[BancoUsers.totalUsers()];
+            String[] nomes = new String[BancoUsers.totalUsers()];
+            for(int i = 0; i < BancoUsers.totalUsers(); i++){
+                User user = BancoUsers.getUser(i);
+                notas[i] = user.getMediaNota();
+                nomes[i] = user.getNome();
+            }
+            double doubleAux = 0;
+            String stringAux;
+            for(int i = 0; i < BancoUsers.totalUsers(); i++){
+		for(int j = 0; j < BancoUsers.totalUsers() - 1; j++){
+                    if(notas[j] < notas[j + 1]){
+			doubleAux = notas[j];
+			notas[j] = notas[j+1];
+			notas[j+1] = doubleAux;
+                        
+                        stringAux = nomes[j];
+                        nomes[j] = nomes[j+1];
+                        nomes[j+1] = stringAux;
+                    }
+		}
+            }
+            for(int i = 0; i < BancoUsers.totalUsers(); i++){%>
+            <tr><td><%=nomes[i]%></td><td><%=notas[i]%></td></tr>
+            <%}%>
         </table><br/><br/><br/>
         <table border="1">
             <tr><th colspan="2">Quizzes Efetuados</th></tr>
