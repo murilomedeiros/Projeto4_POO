@@ -35,6 +35,25 @@ public class BancoUsers {
         BancoUsers.getClientes().add(user);
         return true;
     }
+    public static boolean atualizarMediaUser(String nomeUser, double acertosQuiz){
+        int i = 0;
+        for(User u: getClientes()){
+            if(u.getNome().equals(nomeUser)){
+                double mediaNota = 0;
+                if(u.getMediaNota() == 0){
+                    mediaNota = acertosQuiz;
+                }else{
+                    mediaNota = (u.getMediaNota() + acertosQuiz)/2;
+                }
+                u.setMediaNota(mediaNota);
+                BancoUsers.getClientes().remove(i);
+                BancoUsers.getClientes().add(i, u);
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
     public static boolean addQuizEfetuado(Quiz quiz){
         BancoUsers.getQuizzesEfetuados().add(quiz);
         return true;

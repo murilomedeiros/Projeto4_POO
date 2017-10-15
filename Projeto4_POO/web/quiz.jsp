@@ -32,6 +32,7 @@
                 }
                 Quiz quiz = new Quiz(10, acertos, String.valueOf(session.getValue("sessionName")));
                 BancoUsers.addQuizEfetuado(quiz);
+                BancoUsers.atualizarMediaUser(String.valueOf(session.getValue("sessionName")), acertos);
                 response.sendRedirect(request.getContextPath() + "/paginaUsuario.jsp");
             }
         %>
@@ -50,7 +51,7 @@
             <%=q.getAlternativas()[2]%>
             <%}%>
              <br/><br/>
-            <input type="hidden" name="usuarioTestado" value="<%=session.getValue("sessionName")%>"/>
+            <input type="hidden" name="usuarioTestado" value="<%=String.valueOf(session.getValue("sessionName"))%>"/>
             <input type="submit" name="finalizar" value="finalizar"/>
         </form>
     </body>
