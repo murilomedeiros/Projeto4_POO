@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Quiz {
     public static int quantidade;
     public static double soma;
+    public static String usuarioTestado;
     public static double getMedia(){
         return soma / (double) quantidade;
     }
@@ -27,5 +28,8 @@ public class Quiz {
             }
         }
         return questoes;
+    }
+    public static String getUsuarioTestado(){
+        return usuarioTestado;
     }
 }
