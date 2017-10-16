@@ -195,9 +195,9 @@ nav.navbar-transparent{
     transition: 0.5s;
 }
 #ul-nav{
-     margin-top: 5px;
+    margin-top: 5px;
 }
- 
+
 /* ---  Capa ---*/
 
 #text-cover{
@@ -351,6 +351,10 @@ nav.navbar-transparent{
     padding: 10% 20% 0% 20%;
 }
 
+#table2{
+    margin-top: 30px;
+    padding: 10% 20% 0% 20%;
+}
 
 
 /* --- Footer --*/
@@ -381,110 +385,17 @@ nav.navbar-transparent{
     padding-right: 5%;
 }
 
-/* --- juros S --- */
+/* --- Quiz --- */
 
-.text-coverR{
-    text-align: center;
-    color: white;
-    display: table-cell;
-    vertical-align: middle;
-    padding-top: 5%;
-    width: 100%    
+.quiz-title{
+    margin-top: 100px;
 }
 
-#calc{
-    margin-top: 80px;
-    padding: 0px  15% 30px 15%;
-}
-
-
-#text-interestS{
-    height: 100%;
-    margin-bottom: 100px;
-    width: 100%
-}
-
-#table-interestS{
-    margin-top: 20px;
-    margin-bottom: 100px;
-}
-
-#calculatorS{
-    margin-top: 50px;
-    margin-left: 5px;
-}
-
-#formS{
-    margin-top: 150px;
-    margin-left: 20px;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-#formS input[type=number]{
-    width: 140px;
-} 
-
-#submit {
-    color: #fff;
-    font-size: 14px;
-    width: 80px;
-    height: 36px;
-    border: none;
-    border-radius: 8px;
-    margin-left: 10px;
-    background: rgb(240, 173, 78); 
-}
-
-#containerJ{
-    height: auto; 
-    background: rgb(240,240,240);
-    padding-top: 105px;
-    padding-bottom: 20px;
-    min-height: 700px;
-
-}
-/* --- juros C --- */
-
-
-#containerJC{
-    height: auto; 
-    background: rgb(240,240,240);
-    padding-top: 105px;
-    padding-bottom: 20px;
-    min-height: 700px;
-
-}
-
-#text-interestC{
-    height: 100%;
-}
-
-#table-interestC{
-    color: white;
-    margin-top: 150px;
-}
-
-#formC input[type=number]{
-    width: 160px;
-} 
-
-#formC{
-    margin-top: 150px;
-    margin-left: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-
-}
-
-.graficos{
-    margin-top: 10px;
-    display: block;
-    height: 30%;
-    width: 70%;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
+.form-quiz{
+    margin: 10% 30% 5% 30%;
+    border-radius: 30px;
+    background-color: #EAF5F2;
+    padding: 30px 10px;
 }
 
 

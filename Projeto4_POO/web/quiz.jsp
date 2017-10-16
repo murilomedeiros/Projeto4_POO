@@ -15,14 +15,13 @@
         <title>Quiz</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link href="resources/css/custom.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/nav-bar.jspf" %>
-        <h1>Quiz</h1>
+        <h1 class="textCenter whiteC quiz-title">Quiz</h1>
         <%            if (session.getValue("sessionName") == null) {
                 response.sendRedirect("home.jsp");
             }
@@ -42,24 +41,25 @@
                 response.sendRedirect(request.getContextPath() + "/paginaUsuario.jsp");
             }
         %>
-
-        <form>
-            <%for (Questao q : Quiz.getQuestoes()) {%>
-            <h4><%=q.getPergunta()%></h4>
-            <input type="radio" name="<%=q.getPergunta()%>"
-                   value="<%=q.getAlternativas()[0]%>"/>
-            <%=q.getAlternativas()[0]%>
-            <input type="radio" name="<%=q.getPergunta()%>"
-                   value="<%=q.getAlternativas()[1]%>"/>
-            <%=q.getAlternativas()[1]%>
-            <input type="radio" name="<%=q.getPergunta()%>"
-                   value="<%=q.getAlternativas()[2]%>"/>
-            <%=q.getAlternativas()[2]%>
-            <%}%>
-            <br/><br/>
-            <input type="hidden" name="usuarioTestado" value="<%=String.valueOf(session.getValue("sessionName"))%>"/>
-            <input type="submit" name="finalizar" value="finalizar"/>
-        </form>
+        <div class="form-quiz textCenter">
+            <form>
+                <%for (Questao q : Quiz.getQuestoes()) {%>
+                <h4><%=q.getPergunta()%></h4>
+                <input type="radio" name="<%=q.getPergunta()%>"
+                       value="<%=q.getAlternativas()[0]%>"/>
+                <%=q.getAlternativas()[0]%>
+                <input type="radio" name="<%=q.getPergunta()%>"
+                       value="<%=q.getAlternativas()[1]%>"/>
+                <%=q.getAlternativas()[1]%>
+                <input type="radio" name="<%=q.getPergunta()%>"
+                       value="<%=q.getAlternativas()[2]%>"/>
+                <%=q.getAlternativas()[2]%>
+                <%}%>
+                <br/><br/>
+                <input type="hidden" name="usuarioTestado" value="<%=String.valueOf(session.getValue("sessionName"))%>"/>
+                <input class="btn btn-colors" type="submit" name="finalizar" value="Finalizar"/>
+            </form>
+        </div>
         <%@include file="WEB-INF/jspf/success-register.jspf" %>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
         <!-- Jquery -->

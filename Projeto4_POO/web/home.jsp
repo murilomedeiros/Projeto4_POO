@@ -35,45 +35,87 @@
 
                 <form id="form-login" class="navbar-form" method="post"> 
                     <p>Quiz composto por vários tipos de perguntas sobre o mundo animal.</p><br>
-                    
-                    
-                    <%
-                if(session.getAttribute("email") == null){   
-                %>
-                <div class="form-group">
+
+
+                    <%                        if (session.getAttribute("email") == null) {
+                    %>
+                    <div class="form-group">
                         <input id="register-input" class="form-control" type="email" name="userName" required placeholder="Digite seu email"/>
                     </div>
-                <input  id="enter" type="submit" class="btn btn-colors2" name="trigger" value="Cadastre-se"/>
-                <%
-} else{%>
-<br><br>
-                <%}
-            %>
-                    
+                    <input  id="enter" type="submit" class="btn btn-colors2" name="trigger" value="Cadastre-se"/>
+                    <%
+                    } else {%>
+                    <br><br>
+                    <%}
+                    %>
+
                 </form>
             </div>
         </div>
         <section id="ranking" class="container-fluid content" >
+
             <img class="birds" src="resources/img/birds.png" alt=""/>
             <div class="table-ranking">
                 <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
                 <table class="table table-hover table-responsive">
                     <tr>
                         <th scope="row">Nome</th>
-                        <th>Nota</th>
+                        <th>Média das Notas</th>
                     </tr>
-                    <%for (int i = 0; i < BancoUsers.totalUsers(); i++) {
-                        User user = BancoUsers.getUser(i);%>
+                    <%
+                        double[] notas = new double[BancoUsers.totalUsers()];
+                        String[] nomes = new String[BancoUsers.totalUsers()];
+                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {
+                            User user = BancoUsers.getUser(i);
+                            notas[i] = user.getMediaNota();
+                            nomes[i] = user.getNome();
+                        }
+                        double doubleAux = 0;
+                        String stringAux;
+                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {
+                            for (int j = 0; j < BancoUsers.totalUsers() - 1; j++) {
+                                if (notas[j] < notas[j + 1]) {
+                                    doubleAux = notas[j];
+                                    notas[j] = notas[j + 1];
+                                    notas[j + 1] = doubleAux;
+
+                                    stringAux = nomes[j];
+                                    nomes[j] = nomes[j + 1];
+                                    nomes[j + 1] = stringAux;
+                                }
+                            }
+                        }
+                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {%>
                     <tr>
-                        <td><%=user.getNome()%></td>
-                        <td><%=user.getMediaNota()%></td>
+                        <td><%=nomes[i]%></td>
+                        <td><%=notas[i]%></td>
                     </tr>
                     <%}%>
                 </table>
             </div>
+            <div id="table2">
+                <h2 class="text-center ">Quizzes Efetuados</h2><hr class='bottom-line3'><br><br>
+                <table class="table table-hover table-responsive">
+                    <tr>
+                        <th scope="row" >Quiz - Nome</th>
+                        <th>Média</th>
+                    </tr>
+                    <%int c = 1;
+                                for (int i = BancoUsers.totalQuizzesEfetuados() - 1; i >= 0; i--) {
+                                    if (c <= 10) {
+                                        Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
+                    <tr>
+                        <td>Quiz de: <%=quiz.getUsuarioTestado()%></td>
+                        <td><%=quiz.getMedia()%></td>
+                    </tr>
+                    <%c++;
+                            }
+                        }%>
+                </table>
+            </div>
             <img class="lion" src="resources/img/coruja.png" alt=""/>
         </section>
-                
+
         <section id="team" class="container-fluid " >
             <img class="images-cipo" src="resources/img/cipo.png" alt=""/>
             <div class='container'>

@@ -54,6 +54,14 @@ public class BancoUsers {
         }
         return false;
     }
+    public static double obterMediaUser(String nomeUser){
+        for(User u : getClientes()){
+            if(u.getNome().equals(nomeUser)){
+                return u.getMediaNota();
+            }
+        }
+        return -1;
+    }
     public static boolean addQuizEfetuado(Quiz quiz){
         BancoUsers.getQuizzesEfetuados().add(quiz);
         return true;
