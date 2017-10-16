@@ -6,19 +6,6 @@
 <%@page import="br.com.fatecpg.connection.Quiz"%>
 <%@page import="br.com.fatecpg.connection.User"%>
 <%@page import="br.com.fatecpg.connection.BancoUsers"%>
-<% 
-    if(request.getParameter("logoutUsuario") != null){
-        session.invalidate();
-        response.sendRedirect("home.jsp");
-        return;
-    }
-    if(session.getValue("sessionName") == null){
-        response.sendRedirect("home.jsp");
-    }
-    if(request.getParameter("realizarQuiz") != null){
-        response.sendRedirect("quiz.jsp");
-    }
-%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home - <%= session.getValue("sessionName")%></title>
         <!-- Includes CSS & WoW-->
-        <%@include file="META-INF/jspf/link.jspf" %>
+        <%@include file="WEB-INF/jspf/link.jspf" %>
         <!-- Ends -->
     </head>
     <body>
@@ -48,7 +35,7 @@
             
         </table>
         <!-- Include Scripts Js -->
-        <%@include file="META-INF/jspf/scripts.jspf" %>
+        <%@include file="WEB-INF/jspf/scripts.jspf" %>
         <!-- Ends -->
     </body>
 </html>
