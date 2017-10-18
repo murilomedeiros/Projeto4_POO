@@ -50,13 +50,13 @@
                     <div class="row-radio">
                 <h4><%=x + ". " + q.getPergunta()%></h4>
                 <div class="radio-place">
-                    <input type="radio" class="radio-button" name="<%=q.getPergunta()%>"
+                    <input type="radio" class="radio-button" required name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[0]%>"/>
                     <%=q.getAlternativas()[0]%>
-                    <input type="radio" class="radio-button2" name="<%=q.getPergunta()%>"
+                    <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[1]%>"/>
                     <%=q.getAlternativas()[1]%>
-                    <input type="radio" class="radio-button2" name="<%=q.getPergunta()%>"
+                    <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[2]%>"/>
                     <%=q.getAlternativas()[2]%>
                     </div>
