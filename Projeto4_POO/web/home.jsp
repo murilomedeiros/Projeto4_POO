@@ -34,7 +34,7 @@
                 <div>
 
                     <form id="form-login" class="navbar-form" method="post"> 
-                        <p>Quiz composto por vários tipos de perguntas sobre o mundo animal.</p><br>
+                        <p>Vamos lá, mostre sua capacidade !!</p><br>
 
 
                         <%                        if (session.getAttribute("email") == null) {
@@ -45,7 +45,8 @@
                         <input  id="enter" type="submit" class="btn btn-colors2" name="trigger" value="Cadastre-se"/>
                         <%
                     } else {%>
-                        <br><br>
+                        <a href="quiz.jsp" class="btn btn-colors btn-play">Jogar</a>
+                        <br>
                         <%}
                         %>
 
@@ -129,7 +130,8 @@
             <img class="images-cipo" src="resources/img/cipo.png" alt=""/>
             <div class='container'>
                 <div class='row container-equip'>
-                    <h2 class='text-center '>Equipe</h2> <hr class='bottom-line3'><br><br>
+                    <h2 class='text-center'>Equipe</h2><hr>
+                    <br><br>
                     <div class='col-md-3 member-team'>
                         <img  src='resources/img/henrique.jpg' alt=''/>
                         <h2>Henrique</h2>
