@@ -12,3 +12,11 @@ $(document).ready(function(){
       });
   });
 });
+
+$(document).on("scroll", function () {
+    if ($(document).scrollTop() > 100) { //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
+        $("#navbarP").removeClass("big"); //TROCA P CLASSE MENOR
+    } else {
+        $("#navbarP").addClass("big");//VOLTA P MENU GRANDE ORIGINAL
+    }
+});
