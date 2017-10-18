@@ -14,7 +14,7 @@
         <script>
             window.onload = function () {
                 $("#success").modal("show");
-            };
+            }
         </script>
         <%
                 } else {
@@ -47,8 +47,6 @@
         <div class='collapse navbar-collapse' id='nav-bar'>
             <ul id="ul-nav" class="nav navbar-nav">
                 <li><a id='homeLink' href='home.jsp'>Home</a></li>
-                <li><a id='rankingLink' href='#ranking'>Ranking</a></li>
-                <li><a id='teamLink' href='#team'>Equipe</a></li>
                     <%
                         if (session.getAttribute("email") != null) {
                     %>
