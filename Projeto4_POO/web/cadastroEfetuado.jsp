@@ -3,7 +3,7 @@
     Created on : 14/10/2017, 02:36:08
     Author     : Muca
 --%>
-
+<!-- NÃO ESTÁ USANDO ...
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,4 +16,4 @@
         <h4>Retorne a página inicial e entre com seu nome cadastrado!</h4>
         <a href="home.jsp">Voltar</a>
     </body>
-</html>
+</html>-->

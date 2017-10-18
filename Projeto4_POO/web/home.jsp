@@ -61,7 +61,7 @@
                         <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
                         <table class="table table-hover table-responsive">
                             <tr>
-                                <th scope="row">Nome</th>
+                                <th scope="row">Nome/Email do jogador</th>
                                 <th>Média das Notas</th>
                             </tr>
                             <%
@@ -101,7 +101,7 @@
                         <h2 class="text-center ">Quizzes Efetuados</h2><hr class='bottom-line3'><br><br>
                         <table class="table table-hover table-responsive">
                             <tr>
-                                <th scope="row" >Quiz - Nome</th>
+                                <th scope="row" >Nome/Email do jogador</th>
                                 <th>Média</th>
                             </tr>
                             <%int c = 1;
@@ -109,7 +109,7 @@
                                     if (c <= 10) {
                                         Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
                             <tr>
-                                <td>Quiz de: <%=quiz.getUsuarioTestado()%></td>
+                                <td><%=quiz.getUsuarioTestado()%></td>
                                 <td><%=quiz.getMedia()%></td>
                             </tr>
                             <%c++;

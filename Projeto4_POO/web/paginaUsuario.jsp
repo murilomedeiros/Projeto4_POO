@@ -70,7 +70,7 @@
                 }
                 if (mediaGeral > 0.0) {
             %>
-            <h3 class="textCenter">Sua média de todos os quizzes: <span style="background-color:<%=color%>; border-radius: 10px; padding: 5px;"><%=mediaGeral%></span></h3>
+            <h3 class="textCenter">Sua média de todos os quizzes: <span class="span-media" style="background-color:<%=color%>;"><%=mediaGeral%></span></h3>
                 <%} else {%>
             <h3 class="textCenter">Não foi encontrado qualquer quiz realizado, vamos lá tentar fazer um !!!<br><br><a href='quiz.jsp' class="btn btn-colors">Quiz</a></h3>
                 <%}%>
