@@ -40,7 +40,8 @@
                 <span class='icon-bar'></span>
             </button>
 
-            <a href='index.html' class='navbar-brand'>
+            <a href='home.jsp' class='logo navbar-brand '>
+                <img src="resources/img/logo-lion2.png" alt=""/>
             </a>
         </div>
         <!-- navbar Murilo -->
