@@ -8,7 +8,6 @@
 <%@page import="br.com.fatecpg.connection.BancoUsers"%>
 <%@page import="br.com.fatecpg.connection.User"%>
 <%@page import="br.com.fatecpg.connection.Quiz"%>
-
 <!DOCTYPE html>
 <html>
     <head>
