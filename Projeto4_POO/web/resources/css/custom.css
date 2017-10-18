@@ -402,7 +402,7 @@ nav.navbar-transparent{
 #pagQuiz{
     background-image: url('../img/backQuiz.png');
     background-repeat: no-repeat;
-    background-size: 108%;
+    background-size: 105%;
 }
 
 .form-quiz .radio-button{
@@ -529,7 +529,7 @@ h3{
 
 @media only screen and (max-width: 1440px) {
     #pagQuiz{
-        background-size: 120%;
+        background-size: 117%;
     }
 }
 
