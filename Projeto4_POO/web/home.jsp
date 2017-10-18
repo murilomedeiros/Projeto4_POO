@@ -55,64 +55,72 @@
         <section id="ranking" class="container-fluid content" >
 
             <img class="birds" src="resources/img/birds.png" alt=""/>
-            <div class="table-ranking">
-                <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
-                <table class="table table-hover table-responsive">
-                    <tr>
-                        <th scope="row">Nome</th>
-                        <th>Média das Notas</th>
-                    </tr>
-                    <%
-                        double[] notas = new double[BancoUsers.totalUsers()];
-                        String[] nomes = new String[BancoUsers.totalUsers()];
-                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {
-                            User user = BancoUsers.getUser(i);
-                            notas[i] = user.getMediaNota();
-                            nomes[i] = user.getNome();
-                        }
-                        double doubleAux = 0;
-                        String stringAux;
-                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {
-                            for (int j = 0; j < BancoUsers.totalUsers() - 1; j++) {
-                                if (notas[j] < notas[j + 1]) {
-                                    doubleAux = notas[j];
-                                    notas[j] = notas[j + 1];
-                                    notas[j + 1] = doubleAux;
-
-                                    stringAux = nomes[j];
-                                    nomes[j] = nomes[j + 1];
-                                    nomes[j + 1] = stringAux;
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="table-ranking">
+                        <h2 class="text-center ">Ranking</h2><hr class='bottom-line3'><br><br>
+                        <table class="table table-hover table-responsive">
+                            <tr>
+                                <th scope="row">Nome</th>
+                                <th>Média das Notas</th>
+                            </tr>
+                            <%
+                                double[] notas = new double[BancoUsers.totalUsers()];
+                                String[] nomes = new String[BancoUsers.totalUsers()];
+                                for (int i = 0; i < BancoUsers.totalUsers(); i++) {
+                                    User user = BancoUsers.getUser(i);
+                                    notas[i] = user.getMediaNota();
+                                    nomes[i] = user.getNome();
                                 }
-                            }
-                        }
-                        for (int i = 0; i < BancoUsers.totalUsers(); i++) {%>
-                    <tr>
-                        <td><%=nomes[i]%></td>
-                        <td><%=notas[i]%></td>
-                    </tr>
-                    <%}%>
-                </table>
-            </div>
-            <div id="table2">
-                <h2 class="text-center ">Quizzes Efetuados</h2><hr class='bottom-line3'><br><br>
-                <table class="table table-hover table-responsive">
-                    <tr>
-                        <th scope="row" >Quiz - Nome</th>
-                        <th>Média</th>
-                    </tr>
-                    <%int c = 1;
+                                double doubleAux = 0;
+                                String stringAux;
+                                for (int i = 0; i < BancoUsers.totalUsers(); i++) {
+                                    for (int j = 0; j < BancoUsers.totalUsers() - 1; j++) {
+                                        if (notas[j] < notas[j + 1]) {
+                                            doubleAux = notas[j];
+                                            notas[j] = notas[j + 1];
+                                            notas[j + 1] = doubleAux;
+
+                                            stringAux = nomes[j];
+                                            nomes[j] = nomes[j + 1];
+                                            nomes[j + 1] = stringAux;
+                                        }
+                                    }
+                                }
+                                for (int i = 0; i < BancoUsers.totalUsers(); i++) {%>
+                            <tr>
+                                <td><%=nomes[i]%></td>
+                                <td><%=notas[i]%></td>
+                            </tr>
+                            <%}%>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="table2">
+                        <h2 class="text-center ">Quizzes Efetuados</h2><hr class='bottom-line3'><br><br>
+                        <table class="table table-hover table-responsive">
+                            <tr>
+                                <th scope="row" >Quiz - Nome</th>
+                                <th>Média</th>
+                            </tr>
+                            <%int c = 1;
                                 for (int i = BancoUsers.totalQuizzesEfetuados() - 1; i >= 0; i--) {
                                     if (c <= 10) {
                                         Quiz quiz = BancoUsers.getQuizEfetuado(i);%>
-                    <tr>
-                        <td>Quiz de: <%=quiz.getUsuarioTestado()%></td>
-                        <td><%=quiz.getMedia()%></td>
-                    </tr>
-                    <%c++;
-                            }
-                        }%>
-                </table>
+                            <tr>
+                                <td>Quiz de: <%=quiz.getUsuarioTestado()%></td>
+                                <td><%=quiz.getMedia()%></td>
+                            </tr>
+                            <%c++;
+                                    }
+                                }%>
+                        </table>
+                    </div>
+                </div>
             </div>
+
+
             <img class="lion" src="resources/img/coruja.png" alt=""/>
         </section>
 
@@ -124,35 +132,29 @@
                     <div class='col-md-3 member-team'>
                         <img  src='resources/img/henrique.jpg' alt=''/>
                         <h2>Henrique</h2>
-                        <p>Responsável desenvolvimento.</p>
+                        <p>Responsável desenvolvimento das funcionalidades do quiz.</p>
                         <p>riquemelo98@gmail.com</p>
-                        <a href='https://www.facebook.com/adalberto.rodriguesteixeirajunior' target='_blank'><img class='icons' src='res/images/facebook.png' alt=''/></a>
-                        <a href='https://www.linkedin.com/in/adalberto-j-597249114' target='_blank'><img class='icons' src='res/images/linkedin.png' alt=''/></a>
-                        <a href='https://github.com/AdalbertoRodrigues' target='_blank'><img class='icons' src='res/images/github.png' alt=''/></a>
+                       
                     </div>
                     <div class='col-md-3 member-team' >
                         <img  src='resources/img/muriloXavier.jpg' alt=''/>
                         <h2>Murilo Xavier</h2>
-                        <p>Responsável desenvolvimento .</p>
+                        <p>Responsável desenvolvimento do sistema de login.</p>
                         <p>muquinhaxl@gmail.com</p>
-                        <a href='https://www.facebook.com/diogo.pacheco.184' target='_blank'><img class='icons' src='res/images/facebook.png' alt=''/></a>
-                        <a href='https://github.com/DiogoPachecoPereira' target='_blank'><img class='icons' src='res/images/github.png' alt=''/></a>
-                    </div>
+                                           </div>
                     <div class='col-md-3 member-team'>
                         <img  src='resources/img/murilo.jpg' alt=''/>
                         <h2>Murilo Medeiros</h2>
-                        <p>Responsável desenvolvimento da aparencia da interface.</p>
+                        <p>Responsável desenvolvimento da aparência da interface.</p>
                         <p>murilo_medeiros98@hotmail.com</p>
-                        <a href='https://www.facebook.com/murilo.meedeiros' target='_blank'><img class='icons' src='res/images/facebook.png' alt=''/></a>
-                        <a href='https://www.linkedin.com/in/murilo-medeiros-630219135/' target='_blank'><img class='icons' src='res/images/linkedin.png' alt=''/></a>
-                        <a href='https://github.com/murilomedeiros' target='_blank'><img class='icons' src='res/images/github.png' alt=''/></a>
+                        
                     </div>
                 </div>
             </div>
             <img class="images-animals" src="resources/img/tubarao.png" alt=""/>
 
         </section>  
-        <%@include file="WEB-INF/jspf/success-register.jspf" %>
+        
         <%@include file="WEB-INF/jspf/footer.jspf" %>
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

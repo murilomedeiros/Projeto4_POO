@@ -29,7 +29,6 @@ body{
 
 .textCenter{
     text-align: center;
-
 }
 
 .top-title{
@@ -348,12 +347,13 @@ nav.navbar-transparent{
 
 .content .table-ranking{
 
-    padding: 10% 20% 0% 20%;
+    padding: 120px 10% 0% 10%;
+    margin-bottom: 180px;
 }
 
 #table2{
-    margin-top: 30px;
-    padding: 10% 20% 0% 20%;
+    padding: 87px 10% 0% 10%;
+    margin-bottom: 180px;
 }
 
 
@@ -388,15 +388,108 @@ nav.navbar-transparent{
 /* --- Quiz --- */
 
 .quiz-title{
-    margin-top: 100px;
+    margin-top: 180px;
 }
 
 .form-quiz{
-    margin: 10% 30% 5% 30%;
+    margin: 10% 30% 15% 30%;
     border-radius: 30px;
     background-color: #EAF5F2;
     padding: 30px 10px;
+    box-shadow: 2px 2px 2px 2px #888888;
 }
+
+#pagQuiz{
+    background-image: url('../img/backQuiz.png');
+    background-repeat: no-repeat;
+    background-size: 108%;
+}
+
+.form-quiz .radio-button{
+    margin: 15px 0px 15px 15%;
+}
+
+.form-quiz .radio-button2{
+    margin: 15px 0px 15px 25%;
+}
+.form-quiz .radio-place{
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    margin: 10px 5px 30px 5px;
+}
+.form-quiz .row-radio{
+    margin: 10px 5px 30px 5px;
+}
+
+
+
+
+/* --- Página do Usuário --- */
+
+#pagUser{
+    background: #52c234;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.container-user{
+    padding: 8% 20% 40% 20%;
+    margin-top: 100px;
+    height: 850px;
+}
+.container-user h2{
+    font-weight: 500;
+}
+
+
+.content-user{
+    margin-top: 60px;
+    margin-bottom: 160px;
+}
+
+
+#pagUser .right{
+    float: right;
+}
+#pagUser .left{
+    float: left;
+}
+
+#pagUser .lion{
+    margin-top: 4px;
+    margin-left: 30px;
+    height: 150px;
+    z-index: 5;
+}
+/* --- Modal --- */
+#login-box-body {
+    padding: 15px 30px;
+}
+
+
+#login-box-msg{
+    margin: 0px;
+    text-align: center;
+    padding: 0px 20px 20px;
+    font-size: 17px;
+}
+
+#modal-register{
+    width: 420px;
+}
+
+#modal-header h4 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+#modal-header{
+    border-bottom:none;   
+}
+
+#modal-title{font-size:24px;}
 
 
 

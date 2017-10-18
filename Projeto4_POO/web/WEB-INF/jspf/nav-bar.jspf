@@ -10,12 +10,13 @@
                 String userName = request.getParameter("userName");
                 User user = new User(userName, 0);
                 if (BancoUsers.addUser(user)) {
-                    %>
-                    <script>
-                        $("#success").modal('show');
-                    </script>
+        %>
+        <script>
+            window.onload = function () {
+                $("#success").modal("show");
+            }
+        </script>
         <%
-                    
                 } else {
                     session.putValue("sessionName", userName);
                     session.setAttribute("email", userName);
@@ -24,9 +25,9 @@
                 session.invalidate();
                 response.sendRedirect("home.jsp");
                 return;
-            } else if(request.getParameter("realizarQuiz") != null){
+            } else if (request.getParameter("realizarQuiz") != null) {
                 response.sendRedirect("quiz.jsp");
-             }
+            }
         %>
         <!-- header Murilo -->
         <div class='navbar-header'>
@@ -40,7 +41,6 @@
             </button>
 
             <a href='index.html' class='navbar-brand'>
-                <img id='logo-img' src='res/images/calculator_46872.png' alt=''>
             </a>
         </div>
         <!-- navbar Murilo -->
@@ -49,26 +49,27 @@
                 <li><a id='homeLink' href='home.jsp'>Home</a></li>
                 <li><a id='rankingLink' href='home.jsp#ranking'>Ranking</a></li>
                 <li><a id='teamLink' href='home.jsp#team'>Equipe</a></li>
-                <%
-                if(session.getAttribute("email") != null){         
-            %>
+                    <%
+                        if (session.getAttribute("email") != null) {
+                    %>
                 <li><a href='quiz.jsp'>Quiz</a></li>
                 <li><a href='paginaUsuario.jsp'>Minha área</a></li>
-                <%
-                } 
-            %>
+                    <%
+                        }
+                    %>
             </ul>
             <%
-                if(session.getAttribute("email") == null){         
+                if (session.getAttribute("email") == null) {
             %>
             <form id="form-login" class="navbar-form navbar-right" method="post"> 
                 <div class="form-group">
                     <input class="form-control" type="email" name="userName" required placeholder="Digite seu email"/>
                 </div>
-                <input id="enter2" type="submit" class="btn btn-colors" name="trigger" value="Entrar"/>
+                <input id="enter2" type="submit" class="btn btn-colors" name="trigger" value="Entrar" data-toggle="modal"/>
+
             </form>
             <%
-                } else {
+            } else {
             %>
             <form id="sLogin" class="navbar-form navbar-right whiteC" method="post" style="">
                 <label>Olá, <%=session.getAttribute("email")%></label>
@@ -76,26 +77,27 @@
             </form>
 
             <%
-            }
+                }
             %>
         </div>
     </div><!--/container -->
 </nav><!-- /nav -->
- <!-- Jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<%@include file="success-register.jspf" %>
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 
 <script type="text/javascript">
-$(document).on("scroll",function(){
-    if($(document).scrollTop()>100){ //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
-        $("#navbarP").removeClass("big"); //TROCA P CLASSE MENOR
-    } else{
-        $("#navbarP").addClass("big");//VOLTA P MENU GRANDE ORIGINAL
-    }
-});
+            $(document).on("scroll", function () {
+                if ($(document).scrollTop() > 100) { //QUANDO O SCROLL PASSAR DOS 100px DO TOPO
+                    $("#navbarP").removeClass("big"); //TROCA P CLASSE MENOR
+                } else {
+                    $("#navbarP").addClass("big");//VOLTA P MENU GRANDE ORIGINAL
+                }
+            });
 
-var $doc = $('html, body');
+            var $doc = $('html, body');
             $('#homeLink').click(function () {
                 $doc.animate({
                     scrollTop: $($.attr(this, 'href')).offset().top
@@ -113,4 +115,3 @@ var $doc = $('html, body');
             });
 
 </script>
-           
