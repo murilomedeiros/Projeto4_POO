@@ -52,10 +52,10 @@
                 <div class="radio-place">
                     <input type="radio" class="radio-button" required name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[0]%>"/>
-                    <%=q.getAlternativas()[0]%>
+                    <%=q.getAlternativas()[0]%><br/>
                     <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[1]%>"/>
-                    <%=q.getAlternativas()[1]%>
+                    <%=q.getAlternativas()[1]%><br/>
                     <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
                            value="<%=q.getAlternativas()[2]%>"/>
                     <%=q.getAlternativas()[2]%>
