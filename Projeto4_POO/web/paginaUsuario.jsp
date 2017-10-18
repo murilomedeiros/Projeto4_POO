@@ -21,6 +21,9 @@
     </head>
     <body id="pagUser">
         <%
+            if (session.getValue("sessionName") == null) {
+                response.sendRedirect("home.jsp");
+            }
             String aux = request.getParameter("q");
             if(aux != null){
 
