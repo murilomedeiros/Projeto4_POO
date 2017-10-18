@@ -197,6 +197,12 @@ nav.navbar-transparent{
     margin-top: 5px;
 }
 
+.navbar-header .logo img{
+    height: 50px;
+    width: 50px;
+    padding: 0px 10px 5px 0px;
+}
+
 /* ---  Capa ---*/
 
 #text-cover{
