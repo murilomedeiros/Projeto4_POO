@@ -21,7 +21,7 @@
         <link href="resources/css/custom.css" rel="stylesheet" type="text/css"/>
     </head>
     <body id="pagQuiz">
-        <%@include file="WEB-INF/jspf/nav-bar.jspf" %>
+        <%@include file="WEB-INF/jspf/nav-bar-restrict.jspf" %>
         <h1 class="textCenter whiteC quiz-title">Quiz</h1>
         <%            if (session.getValue("sessionName") == null) {
                 response.sendRedirect("home.jsp");
@@ -39,7 +39,7 @@
                 Quiz quiz = new Quiz(10, acertos, String.valueOf(session.getValue("sessionName")));
                 BancoUsers.addQuizEfetuado(quiz);
                 BancoUsers.atualizarMediaUser(String.valueOf(session.getValue("sessionName")), acertos);
-                response.sendRedirect(request.getContextPath() + "/paginaUsuario.jsp");
+                response.sendRedirect(request.getContextPath() + "/paginaUsuario.jsp?q=d");
             }
         %>
         <div class="form-quiz ">
@@ -47,23 +47,24 @@
                 <h2 class="textCenter">Questões</h2><br><br>
                 <% int x = 1;
                     for (Questao q : Quiz.getQuestoes()) {%>
-                    <div class="row-radio">
-                <h4><%=x + ". " + q.getPergunta()%></h4>
-                <div class="radio-place">
-                    <input type="radio" class="radio-button" required name="<%=q.getPergunta()%>"
-                           value="<%=q.getAlternativas()[0]%>"/>
-                    <%=q.getAlternativas()[0]%><br/>
-                    <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
-                           value="<%=q.getAlternativas()[1]%>"/>
-                    <%=q.getAlternativas()[1]%><br/>
-                    <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
-                           value="<%=q.getAlternativas()[2]%>"/>
-                    <%=q.getAlternativas()[2]%>
+                <div class="row-radio">
+                    <h4><%=x + ". " + q.getPergunta()%></h4>
+                    <div class="radio-place">
+                        <input type="radio" class="radio-button" required name="<%=q.getPergunta()%>"
+                               value="<%=q.getAlternativas()[0]%>"/>
+                        <%=q.getAlternativas()[0]%><br/>
+                        <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
+                               value="<%=q.getAlternativas()[1]%>"/>
+                        <%=q.getAlternativas()[1]%><br/>
+                        <input type="radio" class="radio-button2" required  name="<%=q.getPergunta()%>"
+                               value="<%=q.getAlternativas()[2]%>"/>
+                        <%=q.getAlternativas()[2]%>
                     </div>
                     <hr>
-                    </div>
-                    <%x++;}%>
-                
+                </div>
+                <%x++;
+                        }%>
+
                 <br/><br/>
                 <input type="hidden" name="usuarioTestado" value="<%=String.valueOf(session.getValue("sessionName"))%>"/>
                 <h5 class="textCenter"><input class="btn btn-colors " type="submit" name="finalizar" value="Finalizar"/></h5>

@@ -23,34 +23,36 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/nav-bar.jspf" %>
-        <div class="top-title">
-            <h1>Quiz Wild</h1> 
-            <div class="right">
-                <div class="speech-bubble">Venha se divertir com nosso quiz !!</div>
-                <img src="https://d134jvmqfdbkyi.cloudfront.net/8362af37/images/deadlyduck/illustrations/questionmarks.svg" alt="" class="questionmarks hide-for-small-only">
-                <img class="lion" src="resources/img/leão.png" alt=""/>
-            </div>
-            <div>
+        
+            <div class="top-title">
+                <h1>Quiz Wild</h1> 
+                <div class="right">
+                    <div class="speech-bubble">Venha se divertir com nosso quiz !!</div>
+                    <img src="https://d134jvmqfdbkyi.cloudfront.net/8362af37/images/deadlyduck/illustrations/questionmarks.svg" alt="" class="questionmarks hide-for-small-only">
+                    <img class="lion" src="resources/img/leão.png" alt=""/>
+                </div>
+                <div>
 
-                <form id="form-login" class="navbar-form" method="post"> 
-                    <p>Quiz composto por vários tipos de perguntas sobre o mundo animal.</p><br>
+                    <form id="form-login" class="navbar-form" method="post"> 
+                        <p>Quiz composto por vários tipos de perguntas sobre o mundo animal.</p><br>
 
 
-                    <%                        if (session.getAttribute("email") == null) {
-                    %>
-                    <div class="form-group">
-                        <input id="register-input" class="form-control" type="email" name="userName" required placeholder="Digite seu email"/>
-                    </div>
-                    <input  id="enter" type="submit" class="btn btn-colors2" name="trigger" value="Cadastre-se"/>
-                    <%
+                        <%                        if (session.getAttribute("email") == null) {
+                        %>
+                        <div class="form-group">
+                            <input id="register-input" class="form-control" type="email" name="userName" required placeholder="Digite seu email"/>
+                        </div>
+                        <input  id="enter" type="submit" class="btn btn-colors2" name="trigger" value="Cadastre-se"/>
+                        <%
                     } else {%>
-                    <br><br>
-                    <%}
-                    %>
+                        <br><br>
+                        <%}
+                        %>
 
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+        
         <section id="ranking" class="container-fluid content" >
 
             <img class="birds" src="resources/img/birds.png" alt=""/>
@@ -133,27 +135,27 @@
                         <h2>Henrique</h2>
                         <p>Responsável desenvolvimento das funcionalidades do quiz.</p>
                         <p>riquemelo98@gmail.com</p>
-                       
+
                     </div>
                     <div class='col-md-3 member-team' >
                         <img  src='resources/img/muriloXavier.jpg' alt=''/>
                         <h2>Murilo Xavier</h2>
                         <p>Responsável desenvolvimento do sistema de login.</p>
                         <p>muquinhaxl@gmail.com</p>
-                                           </div>
+                    </div>
                     <div class='col-md-3 member-team'>
                         <img  src='resources/img/murilo.jpg' alt=''/>
                         <h2>Murilo Medeiros</h2>
                         <p>Responsável desenvolvimento da aparência da interface.</p>
                         <p>murilo_medeiros98@hotmail.com</p>
-                        
+
                     </div>
                 </div>
             </div>
             <img class="images-animals" src="resources/img/tubarao.png" alt=""/>
 
         </section>  
-        
+
         <%@include file="WEB-INF/jspf/footer.jspf" %>
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

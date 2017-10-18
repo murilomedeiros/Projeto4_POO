@@ -20,7 +20,20 @@
         <link href="resources/css/custom.css" rel="stylesheet" type="text/css"/>
     </head>
     <body id="pagUser">
-        <%@include file="WEB-INF/jspf/nav-bar.jspf" %>
+        <%
+            String aux = request.getParameter("q");
+            if(aux != null){
+
+        %>
+        <script>
+            window.onload = function () {
+                $("#success-quiz").modal("show");
+            };
+        </script>
+        <%
+            }
+        %>
+        <%@include file="WEB-INF/jspf/nav-bar-restrict.jspf" %>
         <h1 class="textCenter whiteC quiz-title">Área do Usuário</h1>
 
         <img class="lion left" src="resources/img/coruja_como-fazemos1.png" alt=""/>
@@ -33,7 +46,7 @@
           </form>-->   
             <div class="content-user row">
                 <div class="col-md-3 col-md-offset-3">
-                    <h3>Resultados</h3>
+                    <h3>Últimos resultados</h3>
                 </div>
                 <div class="col-md-3">
 
@@ -49,8 +62,8 @@
                                 %>
                         <tr><td><%=quiz.getMedia()%></td></tr>
                         <%
-                            c++;
-                        } 
+                                        c++;
+                                    }
                                 }
                             }
                         %>
@@ -77,6 +90,7 @@
         </section>
 
         <%@include file="WEB-INF/jspf/success-register.jspf" %>
+        <%@include file="WEB-INF/jspf/success-quiz.jspf" %>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

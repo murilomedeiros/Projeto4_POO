@@ -55,7 +55,7 @@
                 <li><a href='quiz.jsp'>Quiz</a></li>
                 <li><a href='paginaUsuario.jsp'>Minha área</a></li>
                     <%
-                        }
+                        } 
                     %>
             </ul>
             <%
